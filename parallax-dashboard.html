@@ -54,7 +54,9 @@
 					  <div class="nav-wrapper grey darken-4">
 						<div class="row">
 						  <div class="col s12">
-							<a href="banorte.com.mx" class="brand-logo"><img class="logo-nav" src="img/banorte-logo.png"></a>
+							<a href="https://www.banorte.com/wps/portal/banorte" target="_blank" class="brand-logo">
+								<img class="logo-nav" src="img/banorte-logo.png" />
+							</a>
 							<ul class="left ">
 								<!-- Sidenav trigger-->
 								<li><a href="#" data-target="slide-out" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a></li>
@@ -79,7 +81,7 @@
 					<li class="divider"></li>
 					<li><a href="#!">three</a></li>
 				  </ul>
-				  <!-- sidenav content here 
+				  <!-- sidenav content here -->
 				  <sidenav-component></sidenav-component>
 				  <!--//-->
 				</header>
@@ -128,7 +130,7 @@
 					<div class="card grey lighten-5">					
 						<div class="card-content black-text">
 							<span class="card-title center">{{kpi.title}}</span>
-							<div v-bind:id="kpi.id+kpi.key" v-bind:class="'qvplaceholder '+kpi.style"></div>
+							<div v-bind:id="kpi.id+kpi.key" v-bind:class="'qvplaceholder '+kpi.style"></div>	
 						</div>
 						<div v-if="kpi.download" class="card-action light-green">
 							<a v-on:click="download" class="btn-floating btn waves-effect waves-light grey darken-4 pulse"><i class="material-icons">file_download</i></a>
@@ -136,6 +138,25 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</script>
+		<script type="text/x-template" id="sidenav-component">
+			<div>
+				<ul id="slide-out" class="sidenav">
+					<li>
+					  
+						<div class="background">
+						  <img class="logo-sidenav" src="img/logo-l.png">
+						</div>
+					</li>
+					<li><div class="divider"></div></li>
+					<li v-for="option in options" v-bind:key="option.key">
+						<router-link v-bind:to="option.url" class="tooltipped" data-position="right" v-bind:data-tooltip="option.tooltip">
+							<i class="small material-icons">{{option.icon}}</i>
+						</router-link>
+						<div class="divider"></div>
+					</li>
+			  	</ul>
 			</div>
 		</script>
 		<script type="text/x-template" id="navbar-component">

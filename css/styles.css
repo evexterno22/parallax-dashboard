@@ -9,14 +9,14 @@ header, main, footer {
 		padding-left: 0;
 	}
 }*/
-.background img {
-  width: 8em;
+.logo-sidenav {
+  width: 23.7em;
 }
 .logo-nav{
 	width: 3.4em;
 }
 .sidenav{
-	width: 100px;
+	width: 300px;
 }
 i.small {
     font-size: 3rem;
