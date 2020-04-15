@@ -17,6 +17,7 @@ require.config( {
 } );
 
 require( ["js/qlik"], function ( qlik ) {
+	
 	qlik.setOnError( function ( error ) {
 		$( '#popupText' ).append( error.message + "<br>" );
 		$( '#popup' ).fadeIn( 1000 );
@@ -25,6 +26,15 @@ require( ["js/qlik"], function ( qlik ) {
 		$( '#popup' ).hide();
 	} );
 
+	window.appQlik= new Array ();
+
+	window.appQlik.push(qlik.openApp('Consumer Sales.qvf', config)) ;
+	//window.appQlik.push(qlik.openApp('Sales Discovery.qvf', config)) ;
+	
+	let evento = new Event("qlik-cargado");
+	
+	document.dispatchEvent(evento);
+	
 	//callbacks -- inserted here --
 	//open apps -- inserted here --
 	//get objects -- inserted here --
