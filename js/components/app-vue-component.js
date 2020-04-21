@@ -15,7 +15,7 @@ document.addEventListener("qlik-cargado", () => {
       'main-component': mainComponent,
       'footer-component': footerComponent
     }
-  }).$mount('#parallax-dashboard');
+  }).$mount('#mashup-vue');
   let evento = new Event("vue-cargado");
 	document.dispatchEvent(evento);
 })
