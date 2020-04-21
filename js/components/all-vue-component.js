@@ -36,14 +36,14 @@ Vue.component('sidenav-component',{
   data: function(){
     return{
       options:[
-         {key:0,url:'home',tooltip:'Home',icon:'fas fa-home i-medium', styleIcon:'padding: 0 6px !important;'}
+         {key:0,url:'home',tooltip:'Home',icon:'fas fa-home i-medium', styleIcon:'padding: 0 6px;'}
         ,{key:1,url:'parallax2',tooltip:'Fujos',icon:'fas fa-funnel-dollar i-medium', styleIcon:''}
         ,{key:2,url:'parallax3',tooltip:'Incumplimiento',icon:'fas fa-praying-hands i-medium', styleIcon:''}
         ,{key:7,url:'/Adjudicacion',tooltip:'Adjudicación',icon:'fas fa-hand-holding-usd i-medium', styleIcon:''}
         ,{key:3,url:'/Distribucion',tooltip:'Distribución',icon:'fas fa-money-check i-medium', styleIcon:''}
         ,{key:4,url:'/Reporte',tooltip:'Reporte',icon:'fas fa-business-time i-medium', styleIcon:''}
-        ,{key:5,url:'/Matriz',tooltip:'Matriz',icon:'fas fa-th i-medium', styleIcon:'padding: 0 8px !important;'}
-        ,{key:6,url:'/Links',tooltip:'Links',icon:'fas fa-link i-medium', styleIcon:'padding: 0 8px !important;'}
+        ,{key:5,url:'/Matriz',tooltip:'Matriz',icon:'fas fa-th i-medium', styleIcon:'padding: 0 8px '}
+        ,{key:6,url:'/Links',tooltip:'Links',icon:'fas fa-link i-medium', styleIcon:'padding: 0 8px'}
       ]
     }
   }

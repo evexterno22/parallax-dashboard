@@ -3,11 +3,11 @@
 .contents a.active {
     font-weight: 500;
     padding-left: 14px;
-    border-left: 2px solid #7ebe13;
+    border-left: 3px solid #7ebe13;
 }
 .contents-sidenav a.active {
     font-weight: 500;
-    padding-left: 14px;
+    padding-left: 14px !important;
     border-right: 4px solid #7ebe13;
 }
 .background img {
@@ -16,10 +16,17 @@
 }
 
 
-nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+nav, nav .nav-wrapper i{
     height: 90px;
-    line-height: 90px;
+    line-height: 40px;
+    padding-top: 20px;
 }
+nav .sidenav-trigger i {
+    height: 56px;
+   
+    padding-top: 0px;
+}
+
 nav {
     background-color: rgba(255,255,255,0.9);
 }
@@ -39,6 +46,9 @@ nav {
 }
 header, main, footer {
 	padding-left: 0px;
+}
+header{
+    height: 105px;
 }
 @media only screen and (max-width : 992px) {
 	header, main, footer {
