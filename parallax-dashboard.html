@@ -88,29 +88,32 @@
 				  <div class="navbar-fixed">
 					<nav>
 					<!-- navbar content here  -->
-					  <div class="nav-wrapper white ">
+						<div class="nav-wrapper">
+							<div class="row container">
+								<div class="col s12">
+									<a href="#" data-target="slide-out" class="left sidenav-trigger hide-on-medium-and-up"><i class="fas fa-bars i-medium grey-text"></i></a>
+									<a href="#introduction" class="brand-logo black-text">Infonavit Banorte</a>
+										<!-- Sidenav trigger-->
+									<ul class="contents right hide-on-med-and-down">	
+										<li><a href="#home" class="black-text">Parallax 1</a></li>
+										<li><a href="#parallax2" class="black-text">Parallax 2</a></li>
+										<li><a href="#parallax3" class="black-text">Parallax 3</a></li>								  
+										<!--
+										<li><a href="sass.html">Sass</a></li>
+										<li><a href="badges.html">Components</a></li>
+										<!-- Dropdown Trigger 
+										<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+										-->
+									</ul>
+										
+								</div>
+							</div>
+						</div>  
 						<div class="row">
-						  <div class="col s12">
-							
-							<ul class="left ">
-								<!-- Sidenav trigger-->
-								<li><router-link to="/" class="brand-logo grey-text">Infonavit Banorte</router-link></li>
-								<li><a href="#" data-target="slide-out" class="left sidenav-trigger hide-on-medium-and-up"><i class="fas fa-bars i-medium grey-text"></i></a></li>
-								
-								<!--
-								<li><a href="sass.html">Sass</a></li>
-								<li><a href="badges.html">Components</a></li>
-								<!-- Dropdown Trigger 
-								<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-								-->
-							</ul>
-								
-						  </div>
+							<div class="col s12 divider divider-infonavit">
+							</div>
 						</div>
-					  </div>
-					  <div class="divider divider-infonavit" ></div>
 					</nav>
-					
 				  </div>
 				  <!--Drop down content here-->
 				  <ul id="dropdown1" class="dropdown-content">
@@ -129,7 +132,7 @@
 			<div>
 				<!---->
 				<main>
-					<div class="container">
+					<div class="">
 						<router-view></router-view>
 					</div>
 				</main>
@@ -150,7 +153,35 @@
 		</script>
 		<script type="text/x-template" id="home-component">
 			<div>
-				<h3>Home</h3>
+				<div id="home"  class="section white scrollspy">
+					<div class="row container">
+						<h2 class="header">Home</h2>
+						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+					</div>
+				</div>
+				<div class="parallax-container">
+					<div class="parallax"><img src="img/back-1.png"></div>
+				</div>
+				<div id="parallax2" class="section white scrollspy">
+					<div class="row container">
+						<h2 class="header">Parallax 2</h2>
+						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+					</div>
+				</div>
+				<div class="parallax-container">
+					<div class="parallax"><img src="img/back-2.png"></div>
+				</div>
+				<div id="parallax3" class="section white scrollspy">
+					<div class="row container">
+						<h2 class="header">Parallax 3</h2>
+						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+					</div>
+				</div>
+				<div class="parallax-container">
+					<div class="parallax"><img src="img/back-3.png"></div>
+				</div>
+
+				<!--
 				<div class="row">
 					<kpi-component v-for="kpi in row1KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
 				</div>
@@ -160,6 +191,7 @@
 				<div class="row">
 					<kpi-component v-for="kpi in row3KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
 				</div>
+				<!---->
 			</div>
 		</script>
 		<script type="text/x-template" id="flujos-component">
@@ -296,7 +328,7 @@
 		</script>
 		<script type="text/x-template" id="sidenav-component">
 			<div>
-				<ul id="slide-out" class="sidenav sidenav-fixed">
+				<ul id="slide-out" class="sidenav contents-sidenav">
 					<li>
 					  
 						<div class="background">
@@ -305,10 +337,10 @@
 					</li>
 					<li><div class="divider"></div></li>
 					<li v-for="option in options" v-bind:key="option.key">
-						<router-link v-bind:to="option.url" v-bind:style="option.styleIcon" class="tooltipped" data-position="right" v-bind:data-tooltip="option.tooltip">
+						<a v-bind:href="'#'+option.url" v-bind:style="option.styleIcon" class="tooltipped" data-position="right" v-bind:data-tooltip="option.tooltip">
 							<!--<i class="small material-icons">{{option.icon}}</i>-->
 							<i v-bind:class="option.icon"></i>
-						</router-link>
+						</a>
 						<div class="divider"></div>
 					</li>
 			  	</ul>
