@@ -3,7 +3,7 @@
 .contents a.active {
     font-weight: 500;
     padding-left: 14px;
-    border-left: 3px solid #7ebe13;
+    border-bottom: 3px solid #7ebe13;
 }
 .contents-sidenav a.active {
     font-weight: 500;

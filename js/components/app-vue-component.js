@@ -7,13 +7,15 @@ let mainComponent={
 let footerComponent={
   template:'#footer-component'
 };
+
 document.addEventListener("qlik-cargado", () => {
 	window.mashupVue = new Vue({
-    router: router,
+   // router: router,
     components:{
       'header-component': headerComponent,
       'main-component': mainComponent,
-      'footer-component': footerComponent
+      'footer-component': footerComponent,
+      //'home-component': homeComponent
     }
   }).$mount('#mashup-vue');
   let evento = new Event("vue-cargado");

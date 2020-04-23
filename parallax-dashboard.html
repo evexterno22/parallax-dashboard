@@ -92,18 +92,12 @@
 							<div class="row container">
 								<div class="col s12">
 									<a href="#" data-target="slide-out" class="left sidenav-trigger hide-on-medium-and-up"><i class="fas fa-bars i-medium grey-text"></i></a>
-									<a href="#introduction" class="brand-logo black-text">Infonavit Banorte</a>
+									<a href="#" class="brand-logo black-text">Infonavit Banorte</a>
 										<!-- Sidenav trigger-->
 									<ul class="contents right hide-on-med-and-down">	
 										<li><a href="#home" class="black-text">Parallax 1</a></li>
 										<li><a href="#parallax2" class="black-text">Parallax 2</a></li>
 										<li><a href="#parallax3" class="black-text">Parallax 3</a></li>								  
-										<!--
-										<li><a href="sass.html">Sass</a></li>
-										<li><a href="badges.html">Components</a></li>
-										<!-- Dropdown Trigger 
-										<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-										-->
 									</ul>
 										
 								</div>
@@ -133,7 +127,7 @@
 				<!---->
 				<main>
 					<div class="">
-						<router-view></router-view>
+						<home-component></home-component>
 					</div>
 				</main>
 				<!---->
@@ -153,35 +147,10 @@
 		</script>
 		<script type="text/x-template" id="home-component">
 			<div>
-				
 				<div class="parallax-container">
 					<div class="parallax"><img src="img/back-1.png"></div>
 				</div>
-				<div id="home"  class="section white scrollspy">
-					<div class="row container">
-						<h2 class="header">Home</h2>
-						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-					</div>
-				</div>
-				<div class="parallax-container">
-					<div class="parallax"><img src="img/back-2.png"></div>
-				</div>
-				<div id="parallax2" class="section white scrollspy">
-					<div class="row container">
-						<h2 class="header">Parallax 2</h2>
-						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-					</div>
-				</div>
-				<div class="parallax-container">
-					<div class="parallax"><img src="img/back-3.png"></div>
-				</div>
-				<div id="parallax3" class="section white scrollspy">
-					<div class="row container">
-						<h2 class="header">Parallax 3</h2>
-						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-					</div>
-				</div>
-
+				<white-section-component v-for="section in whiteSections" v-bind:section="section" v-bind:key="section.key" ></white-section-component>
 				<!--
 				<div class="row">
 					<kpi-component v-for="kpi in row1KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
@@ -195,8 +164,18 @@
 				<!---->
 			</div>
 		</script>
-		<script type="text/x-template" id="flujos-component">
+		<script type="text/x-template" id="white-section-component">
 			<div>
+				<div class="section white">
+					<div class="row container">
+						<h2 class="header">{{section.title}}</h2>
+						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+					</div>
+				</div>
+				<div class="parallax-container">
+					<div class="parallax"><img v-bind:src="'img/'+section.img"></div>
+				</div>
+				<!--
 				<h3>Flujos</h3>
 				<div class="row">
 					<kpi-component v-for="kpi in row1KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
@@ -213,6 +192,7 @@
 				<div class="row">
 					<kpi-component v-for="kpi in row5KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
 				</div>
+				<!---->
 			</div>
 		</script>
 		<script type="text/x-template" id="incumplimiento-component">
