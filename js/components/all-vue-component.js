@@ -17,9 +17,41 @@ Vue.component('home-component',{
   data(){
     return {
       whiteSections:[
-          {key: 0,id:'homeSection', title:'Home',img:"back-2.png"}      
-        , {key: 1,id:'homeSection', title:'Section 1',img:"back-3.png"}      
-        , {key: 2,id:'homeSection', title:'Section 2',img:"back-4.png"}      
+          {key: 0,id:'home', title:'Home',img:"back-2.png",
+            simpleContent: {
+                row1KPI: [
+                  {key: 0, id: 'homeKPI',size:'s6 m4 l3',keyApp:0,qlik:'qamd', title: 'Créditos',style:'kpi-xs', download: false,
+                  /* kpiIn:{
+                      row1KPIN:[
+                            { key: 0, id: 'homeKPIN',icon:'fas fa-dollar-sign i-tiny',size:'s12 m12 l12',keyApp:0,qlik:'NrHfp', title: '',style:'kpiin-xs', download: false}
+                          ]
+                      , row2KPIN:[
+                            { key: 1, id: 'homeKPIN',icon:'fas fa-dollar-sign i-tiny',size:'s6 m6 l6',keyApp:0,qlik:'ajMAEu', title: 'Periodo Anterior',style:'kpiin-xs', download: false}
+                          , { key: 2, id: 'homeKPIN',icon:'fas fa-dollar-sign i-tiny',size:'s6 m6 l6',keyApp:0,qlik:'ajMAEu', title: 'Año Anterior',style:'kpiin-xs', download: false}
+      
+                          ]}*/
+                  }
+                , { key: 1, id: 'homeKPI',size:'s6 m4 l3',keyApp:0,qlik:'JcJvj', title: 'Capital',style:'kpi-xs', download: false,}
+                , { key: 2, id: 'homeKPI',size:'s6 m4 l3',keyApp:0,qlik:'WJYuPN', title: 'Interés',style:'kpi-xs', download: false,}
+                , { key: 3, id: 'homeKPI',size:'s6 m4 l3',keyApp:0,qlik:'WJYuPN', title: 'Total',style:'kpi-xs', download: false,}
+                ]
+              }
+            
+          }      
+        , {key: 1,id:'section', title:'Section 1',img:"back-3.png",
+            collapsibleContent:[
+                  {key:0 ,title:'' ,icon:'',content:[
+                              { key: 0, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 1',style:'kpi-xs', download: false,}
+                          ,   { key: 1, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 2',style:'kpi-xs', download: false,}
+                          ]},
+                  {key:0 ,title:'' ,icon:'', content:[
+                              { key: 2, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 3',style:'kpi-xs', download: false,}
+                          ,   { key: 3, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 4',style:'kpi-xs', download: false,}
+                          ]
+                  }
+                ]
+          }      
+        , {key: 2,id:'section', title:'Section 2',img:"back-4.png"}      
       ]
     }
   }
@@ -28,6 +60,18 @@ Vue.component('home-component',{
 Vue.component('white-section-component',{
   props:['section'],
   template:'#white-section-component',
+  methods:{
+    collapsed(content){
+      let key=0;
+      let kpi={};
+      while(content.length>key){
+        kpi=content[key];
+        window.appQlik[kpi.keyApp].getObject(kpi.id+kpi.key,kpi.qlik);
+        key++;
+      }
+    }
+  },
+
 });
 
 Vue.component('kpi-component',{

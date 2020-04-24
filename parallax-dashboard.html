@@ -184,7 +184,20 @@
 				<div v-bind:id="section.id+section.key" class="section white scrollspy">
 					<div class="row container">
 						<h2 class="header">{{section.title}}</h2>
-						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+						<div v-if="section.simpleContent" class="row">
+							<kpi-component v-for="kpi in section.simpleContent.row1KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
+						</div>
+						<ul v-if="section.collapsibleContent" class="collapsible">
+							<li v-for="row in section.collapsibleContent">
+							  <div v-on:click="collapsed(row.content)" class="collapsible-header"><i v-bind:class="row.icon"></i>{{row.title}}</div>
+							  <div class="collapsible-body">
+								<div class="row">
+									<kpi-component v-for="kpi in row.content" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
+								</div>
+								
+							  </div> 
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="parallax-container">
