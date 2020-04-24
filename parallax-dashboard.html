@@ -95,9 +95,9 @@
 									<a href="#" class="brand-logo black-text">Infonavit Banorte</a>
 										<!-- Sidenav trigger-->
 									<ul class="contents right hide-on-med-and-down">	
-										<li><a href="#home" class="black-text">Parallax 1</a></li>
-										<li><a href="#parallax2" class="black-text">Parallax 2</a></li>
-										<li><a href="#parallax3" class="black-text">Parallax 3</a></li>								  
+										<li v-for="option in options" v-bind:key="option.key">
+											<a v-bind:href="'#'+option.url+option.key" class="black-text">{{option.title}}</a>
+										</li>
 									</ul>
 										
 								</div>
@@ -117,7 +117,22 @@
 					<li><a href="#!">three</a></li>
 				  </ul>
 				  <!-- sidenav content here  -->
-				  <sidenav-component></sidenav-component>
+				  <ul id="slide-out" class="sidenav contents-sidenav">
+						<li>
+						
+							<div class="background">
+							<img src="img/banorte-logo-s2.png">
+							</div>
+						</li>
+						<li><div class="divider"></div></li>
+						<li v-for="option in options" v-bind:key="option.key">
+							<a v-bind:href="'#'+option.url+option.key" v-bind:style="option.styleIcon" class="tooltipped" data-position="right" v-bind:data-tooltip="option.tooltip">
+								<!--<i class="small material-icons">{{option.icon}}</i>-->
+								<i v-bind:class="option.icon"></i> {{option.title}}
+							</a>
+							<div class="divider"></div>
+						</li>
+					</ul>
 				  <!--//-->
 				</header>
 			  </div>
@@ -166,7 +181,7 @@
 		</script>
 		<script type="text/x-template" id="white-section-component">
 			<div>
-				<div class="section white">
+				<div v-bind:id="section.id+section.key" class="section white scrollspy">
 					<div class="row container">
 						<h2 class="header">{{section.title}}</h2>
 						<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
@@ -309,22 +324,7 @@
 		</script>
 		<script type="text/x-template" id="sidenav-component">
 			<div>
-				<ul id="slide-out" class="sidenav contents-sidenav">
-					<li>
-					  
-						<div class="background">
-						  <img src="img/banorte-logo-s2.png">
-						</div>
-					</li>
-					<li><div class="divider"></div></li>
-					<li v-for="option in options" v-bind:key="option.key">
-						<a v-bind:href="'#'+option.url" v-bind:style="option.styleIcon" class="tooltipped" data-position="right" v-bind:data-tooltip="option.tooltip">
-							<!--<i class="small material-icons">{{option.icon}}</i>-->
-							<i v-bind:class="option.icon"></i>
-						</a>
-						<div class="divider"></div>
-					</li>
-			  	</ul>
+				
 			</div>
 		</script>
 		<script type="text/x-template" id="navbar-component">

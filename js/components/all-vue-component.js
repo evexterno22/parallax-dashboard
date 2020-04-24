@@ -1,14 +1,11 @@
 
 
 Vue.component('sidenav-component',{
+  props:['options'],
   template:'#sidenav-component',
   data: function(){
     return{
-      options:[
-         {key:0,url:'home',tooltip:'Home',icon:'fas fa-home i-medium', styleIcon:'padding: 0 6px;'}
-        ,{key:1,url:'parallax2',tooltip:'Fujos',icon:'fas fa-funnel-dollar i-medium', styleIcon:''}
-        ,{key:2,url:'parallax3',tooltip:'Incumplimiento',icon:'fas fa-praying-hands i-medium', styleIcon:''}
-      ]
+     
     }
   }
 });
