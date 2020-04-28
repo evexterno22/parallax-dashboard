@@ -14,7 +14,19 @@
   width: 3.8em;
   height: 4em;
 }
-
+.tabs .tab a {
+    color: rgba(0,0,0,0.7);
+}
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    color: #7ebe13;
+    background-color: rgba(126,190,19,0.2);
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: #7ebe13;
+}
+.tabs .indicator {    
+    background-color: #7ebe13;
+}
 
 nav, nav .nav-wrapper i{
     height: 90px;
@@ -61,6 +73,28 @@ header, main, footer {
 }
 header{
     height: 105px;
+}
+footer{
+    min-height: 50px;
+    padding-bottom: 10px;
+}
+.i-social-media{
+    padding: 10px;
+}
+.collapsible-header {
+    font-size: 1.2rem;
+}
+
+.i-social-media:hover{
+    color:#7EBE13 !important;
+    padding-left: 4px;
+}
+.a-footer{
+
+    color:#7EBE13 !important;
+}
+.p-footer{
+    font-size: 8px;
 }
 @media only screen and (max-width : 992px) {
 	header, main, footer {

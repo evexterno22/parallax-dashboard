@@ -32,6 +32,7 @@
 		<div id="mashup-vue" class="">
 			<header-component></header-component>
 			<main-component></main-component>
+			<footer-component></footer-component>
 
 			<!--
 			<main>
@@ -150,8 +151,29 @@
 		</script>
 		<script type="text/x-template" id="footer-component">
 			<div>
-				<footer>
-					<!--Error Popup-->
+				<footer class="blue-grey darken-3">
+					<div class="container blue-grey darken-3">
+						<div class="row"></div>
+						<div class="row">
+							<div class="col s12 center">
+								<a class="i-social-media white-text" href="https://twitter.com/Financiera_HiTo" target="_blank"> <i class="fab fa-twitter i-small"></i></a>								
+								<a class="i-social-media white-text" href="https://www.facebook.com/Financiera.HiTO" target="_blank"> <i class="fab fa-facebook-f i-small "></i></a>
+							</div>
+						</div>						
+						<div class="row div-footer">
+							<div class="col s12 center">
+								<p class="white-text p-footer">&copy; HITO 2020. TODOS LOS DERECHOS RESERVADOS. 
+									<a class="a-footer" href="https://www.hito.com.mx/aviso-privacidad/" target="_blank">AVISO DE PRIVACIDAD</a>. 
+									LAS CONDICIONES EXACTAS DEL MODELO HITO DEPENDEN DE DIVERSOS FACTORES. 
+									POR LO TANTO, TODO LO EXPRESADO EN ESTA PÁGINA NO REPRESENTA UNA OFERTA ESPECÍFICA Y SE COMUNICA EXCLUSIVAMENTE PARA ILUSTRAR EL MODELO HITO. 
+									TODA LA INFORMACIÓN CONTENIDA EN ESTE SITIO WEB PUEDE CAMBIAR SIN PREVIO AVISO.
+								</p>
+							</div>
+						</div>
+
+					</div>
+					<!--Error Popup
+					
 					<div id="popup">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closePopup"><span aria-hidden="true">×</span></button>
 						<p id="popupText"></p>
@@ -187,17 +209,33 @@
 						<div v-if="section.simpleContent" class="row">
 							<kpi-component v-for="kpi in section.simpleContent.row1KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
 						</div>
-						<ul v-if="section.collapsibleContent" class="collapsible">
-							<li v-for="row in section.collapsibleContent">
+						<ul v-if="section.collapsibleContent" class="collapsible expandable">
+							<li v-bind:class="row.active" v-for="row in section.collapsibleContent">
 							  <div v-on:click="collapsed(row.content)" class="collapsible-header"><i v-bind:class="row.icon"></i>{{row.title}}</div>
 							  <div class="collapsible-body">
 								<div class="row">
 									<kpi-component v-for="kpi in row.content" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
-								</div>
-								
+								</div>	
 							  </div> 
 							</li>
 						</ul>
+						<div v-if="section.tabsContent">
+							<ul  id="tabs-swipe-demo" class="tabs">
+								<li v-for="tab in section.tabsContent" v-bind:class="'tab col '+tab.size ">
+									<a v-bind:class="tab.active" v-bind:href="'#'+tab.id+tab.key"><i v-bind:class="tab.icon"></i>{{' '+tab.title}}</a>
+								</li>
+							</ul>
+							<div v-bind:id="tab.id+tab.key" v-for="tab in section.tabsContent" v-bind:key="tab.key" class="col s12">
+								<div class="row">
+									<kpi-component v-for="kpi in tab.content" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
+								</div>	
+							</div>
+							<!--
+							<div id="test-swipe-1" class="col s12 blue">Test 1</div>
+							<div id="test-swipe-2" class="col s12 red">Test 2</div>
+							  <div id="test-swipe-3" class="col s12 green">Test 3</div>
+							<!---->
+						</div>
 					</div>
 				</div>
 				<div class="parallax-container">

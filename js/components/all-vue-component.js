@@ -40,18 +40,30 @@ Vue.component('home-component',{
           }      
         , {key: 1,id:'section', title:'Section 1',img:"back-3.png",
             collapsibleContent:[
-                  {key:0 ,title:'' ,icon:'',content:[
-                              { key: 0, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 1',style:'kpi-xs', download: false,}
-                          ,   { key: 1, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 2',style:'kpi-xs', download: false,}
+                  {key:0 ,active:'active',title:'Sección 1' ,icon:'fas fa-chart-line',content:[
+                              { key: 0, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 1',style:'kpi-xs', download: false,}
+                          ,   { key: 1, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 2',style:'kpi-xs', download: false,}
                           ]},
-                  {key:0 ,title:'' ,icon:'', content:[
-                              { key: 2, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 3',style:'kpi-xs', download: false,}
-                          ,   { key: 3, id: 'sectionKPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 4',style:'kpi-xs', download: false,}
+                  {key:1 ,active:'',title:'Sección 2' ,icon:'fas fa-coins', content:[
+                              { key: 2, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 3',style:'kpi-xs', download: false,}
+                          ,   { key: 3, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 4',style:'kpi-xs', download: false,}
                           ]
                   }
                 ]
           }      
-        , {key: 2,id:'section', title:'Section 2',img:"back-4.png"}      
+        , {key: 2,id:'section', title:'Section 2',img:"back-4.png",
+              tabsContent:[
+                {key:0 ,id:'section1Tab',size:'s6',active:'',title:'Sección 1' ,icon:'fas fa-chart-line',content:[
+                            { key: 0, id: 'tab1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 1',style:'kpi-xs', download: false,}
+                        ,   { key: 1, id: 'tab1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 2',style:'kpi-xs', download: false,}
+                        ]},
+                {key:1 ,id:'section1Tab',size:'s6',active:'active',title:'Sección 2' ,icon:'fas fa-coins', content:[
+                            { key: 2, id: 'tab1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 3',style:'kpi-xs', download: false,}
+                        ,   { key: 3, id: 'tab1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 4',style:'kpi-xs', download: false,}
+                        ]
+                }
+              ]
+          }      
       ]
     }
   }

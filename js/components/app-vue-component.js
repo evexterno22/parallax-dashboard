@@ -33,8 +33,9 @@ document.addEventListener("qlik-cargado", () => {
       var tooltip=document.querySelectorAll('.tooltipped');
       var parallax = document.querySelectorAll('.parallax');
       var scrollspy = document.querySelectorAll('.scrollspy');
-      var collapsible = document.querySelectorAll('.collapsible');
-      
+      var collapsible = document.querySelectorAll('.collapsible.expandable');
+      var tabs = document.querySelectorAll('.tabs');
+       
     
       var instDropdown1=M.Dropdown.init(dropdown1,{});
       var instSidenav = M.Sidenav.init(sidenav, {});
@@ -42,7 +43,8 @@ document.addEventListener("qlik-cargado", () => {
       var instTooltip = M.Tooltip.init(tooltip, {});
       var instParallax = M.Parallax.init(parallax, {});
       var instScrollypsy = M.ScrollSpy.init(scrollspy, {});
-      var instCollapsible = M.Collapsible.init(collapsible, {});
+      var instCollapsible = M.Collapsible.init(collapsible, {accordion: false});
+      var instance = M.Tabs.init(tabs, {swipeable:true});
     }
   }).$mount('#mashup-vue');
   let evento = new Event("vue-cargado");
