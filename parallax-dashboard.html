@@ -209,16 +209,20 @@
 						<div v-if="section.simpleContent" class="row">
 							<kpi-component v-for="kpi in section.simpleContent.row1KPI" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
 						</div>
-						<ul v-if="section.collapsibleContent" class="collapsible expandable">
-							<li v-bind:class="row.active" v-for="row in section.collapsibleContent">
-							  <div v-on:click="collapsed(row.content)" class="collapsible-header"><i v-bind:class="row.icon"></i>{{row.title}}</div>
-							  <div class="collapsible-body">
-								<div class="row">
-									<kpi-component v-for="kpi in row.content" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
-								</div>	
-							  </div> 
-							</li>
-						</ul>
+						<div v-if="section.collapsibleContent" clas="row">
+							<div v-bind:class="'col '+collapsible.size" v-for="collapsible in section.collapsibleContent">
+								<ul class="collapsible expandable">
+									<li v-bind:class="row.active" v-for="row in collapsible.content">
+									  <div v-on:click="collapsed(row.content)" class="collapsible-header"><i v-bind:class="row.icon"></i>{{row.title}}</div>
+									  <div class="collapsible-body">
+										<div class="row">
+											<kpi-component v-for="kpi in row.content" v-bind:kpi="kpi" v-bind:key="kpi.key"></kpi-component>
+										</div>	
+									  </div> 
+									</li>
+								</ul>
+							</div>
+						</div>
 						<div v-if="section.tabsContent">
 							<ul  id="tabs-swipe-demo" class="tabs">
 								<li v-for="tab in section.tabsContent" v-bind:class="'tab col '+tab.size ">

@@ -157,8 +157,8 @@ main >.container, body>.page-footer>.container, .top-nav>.container, #index-bann
 }
 .container {
     margin: 0 auto;
-    max-width: 1920px;
-    width: 95%;
+    max-width: 8000px;
+    width: 75%;
 }
 .card .card-action {
 	padding: 0px;

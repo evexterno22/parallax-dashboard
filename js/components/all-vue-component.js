@@ -40,13 +40,27 @@ Vue.component('home-component',{
           }      
         , {key: 1,id:'section', title:'Section 1',img:"back-3.png",
             collapsibleContent:[
-                  {key:0 ,active:'active',title:'Sección 1' ,icon:'fas fa-chart-line',content:[
+
+              { size:'s6',content:[ {key:0 ,active:'active',title:'Sección 1' ,icon:'fas fa-chart-line',content:[
                               { key: 0, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 1',style:'kpi-xs', download: false,}
                           ,   { key: 1, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 2',style:'kpi-xs', download: false,}
                           ]},
-                  {key:1 ,active:'',title:'Sección 2' ,icon:'fas fa-coins', content:[
-                              { key: 2, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 3',style:'kpi-xs', download: false,}
-                          ,   { key: 3, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 4',style:'kpi-xs', download: false,}
+                          {key:1 ,active:'',title:'Sección 2' ,icon:'fas fa-coins', content:[
+                                      { key: 2, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 3',style:'kpi-xs', download: false,}
+                                  ,   { key: 3, id: 'collapsible1KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 4',style:'kpi-xs', download: false,}
+                                  ]
+                          }
+                        ]
+                },
+                { size:'s6',content:[ {key:2 ,active:'',title:'Sección 3' ,icon:'fas fa-chart-line',content:[
+                                { key: 4, id: 'collapsible2KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 1',style:'kpi-xs', download: false,}
+                            ,   { key: 5, id: 'collapsible2KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 2',style:'kpi-xs', download: false,}
+                            ]},
+                            {key:3 ,active:'active',title:'Sección 4' ,icon:'fas fa-coins', content:[
+                                        { key: 6, id: 'collapsible2KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 3',style:'kpi-xs', download: false,}
+                                    ,   { key: 7, id: 'collapsible2KPI',size:'s6 m6 l6',keyApp:0,qlik:'JcJvj', title: 'Capital 4',style:'kpi-xs', download: false,}
+                                    ]
+                            }
                           ]
                   }
                 ]
