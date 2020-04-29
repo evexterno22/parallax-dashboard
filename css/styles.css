@@ -11,8 +11,8 @@
     border-right: 4px solid #7ebe13;
 }
 .background img {
-  width: 3.8em;
-  height: 4em;
+  width: 100%;
+  height: 100%;
 }
 .tabs .tab a {
     color: rgba(0,0,0,0.7);
