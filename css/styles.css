@@ -71,7 +71,7 @@ nav {
 header, main, footer {
 	padding-left: 0px;
 }
-header{
+.main-header{
     height: 105px;
 }
 footer{
@@ -186,6 +186,11 @@ nav .brand-logo {
 }
 .card{
 	border-radius: 1em !important;
+}
+.card .card-title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 0px !important;
 }
 
 /*
